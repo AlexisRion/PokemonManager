@@ -1,0 +1,14 @@
+<h1>Les différentes générations : </h1>
+<mat-list role="listgenerations">
+    @for (generation of generations; track generation; let last = $last) {
+        <mat-list-item role="generation">
+            <span>{{ generation.name }}</span>
+        </mat-list-item>
+        @if (!last) {
+            <mat-divider></mat-divider>
+        }
+    }
+</mat-list>
+
+<!-- Framework CSS : 
+ https://material.angular.io/guide/getting-started -->

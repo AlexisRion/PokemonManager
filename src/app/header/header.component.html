@@ -1,0 +1,22 @@
+<mat-toolbar id="header-toolbar">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <img src="logo-pokemon.png" alt="logo Pokemon Manager" height="50">
+
+    <!-- Navigation via le HTML -->
+    <span class="links">
+        <a routerLink="/generation" routerLinkActive="active-link">
+            Générations
+        </a> 
+    </span>
+
+    <!-- Navigation via le Typescript -->
+    <span class="links">
+        <a (click)="navigate()">
+            Pokemons
+        </a>
+    </span>
+
+    <span class="spacer"></span>
+</mat-toolbar>

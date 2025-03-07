@@ -1,0 +1,24 @@
+mat-card-subtitle {
+    color: black;
+}
+
+img {
+    padding-top: 4%;
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.pokemon-card {
+    background-color: lightyellow;
+    box-shadow: 10px 10px 5px grey;
+}
+
+#content {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.btn-load {
+    text-align: center;
+}

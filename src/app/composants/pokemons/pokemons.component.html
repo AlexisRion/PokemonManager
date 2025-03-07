@@ -1,0 +1,47 @@
+<div id="content">
+    <p>{{ nbPokemons }} pokémons en base de données</p>
+
+    <mat-grid-list cols="3" rowHeight="3:4">      
+        @for (pokemon of listPokemons; track pokemon) {
+            <mat-grid-tile>
+            <mat-card class="pokemon-card" appearance="outlined">
+                <img mat-card-image [src]="pokemon.img" [alt]="pokemon.name">
+                <mat-card-header>
+                    <div mat-card-avatar class="pokemon-header-image"></div>
+                    <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
+                    <!-- <mat-card-subtitle>Catégorie : {{ pokemon.category }}</mat-card-subtitle> -->
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Type : 
+                        @for (type of pokemon.types; track type; let last = $last) {
+                            @if (!last) {
+                                {{ type.type.name }},
+                            } @else {
+                                {{ type.type.name }}
+                            }
+                        }
+                    </p>
+                    @if (pokemon.height) {
+                        <p>Taille : {{ pokemon.height }} m</p>
+                    } @else {
+                        <p>Taille : N/A</p>
+                    }
+                    @if (pokemon.weight) {
+                        <p>Poids : {{ pokemon.weight }} kg</p>
+                    } @else {
+                        <p>Poids : N/A</p>
+                    }
+                </mat-card-content>
+                <mat-card-actions>
+                <button mat-button>Voir les détails</button>
+                </mat-card-actions>
+            </mat-card>
+            </mat-grid-tile>
+        }
+    </mat-grid-list>
+
+    <div class="btn-load">
+        <button mat-flat-button (click)="loadPrevPokemons()">Pokémons précédents</button>
+        <button mat-flat-button (click)="loadNextPokemons()">Pokémons suivants</button>
+    </div>
+</div>
